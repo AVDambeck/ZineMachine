@@ -1,2 +1,1 @@
-convert -density 150 *.pdf -quality 90 img.png
-
+convert -density 300 *.pdf -quality 90 img.png
