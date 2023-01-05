@@ -1,11 +1,14 @@
 # Make 8 Fold Zines Easy!
-You can learn how to make 8 page [zines](https://en.wikibooks.org/wiki/Zine_Making/Putting_pages_together) here. This is a tool to convert an 8 page document into an 8 page zine. Most of this was borrowed from [@rowan_m](https://twitter.com/rowan_m)'s site [/zine-machine.glitch.me](https://zine-machine.glitch.me/). There they go over the method of folding the zine, and how the css would work, but don't give the actual code to do it from your own images. I spent an hour coping that and tweaking the numbers to fit right, and figured I'd share. 
+This is an HTML tool to page set small format zines, specifically 8fold and 4panel. Forked from [@rowan_m](https://twitter.com/rowan_m)'s site [/zine-machine.glitch.me](https://zine-machine.glitch.me/). There they go over the method of folding the zine, and how the css would work, but their actual code isn't exactly what I wanted: Tool that page sets a document made with another program.
+
+There are also some tools to help with processing into a print ready document. Although this does use html as a markup language, it's indented use-case is as a local file on a Linux system.
 
 # Usage
-The img directory contains img-0.png through img-8.png. These are your eight pages. Included as an example is my game [Robots](https://github.com/AVDambeck/Robots). Any images should work, but included is an [ImageMagick](https://imagemagick.org) command to split pdfs into a png for each page. 
+First format you zine in the document editor of your choice, and export as either a PDF or JPG sequence. For octiletter, it must be 8 pages, 2.75x4.25 inches. For demiletter, 2 pages, 4.5x11.  Remember to take into account the print margins when making the zine, zine machine does not.
 
-Simply download the repository and put it somewhere connivent. Put your pages in img, and then open index.html in your browser. Press print and there you go. You can print it to a pdf if you want to send copies that way, or send it straight to your printer.
+Go to the demiletter/pages or octiletter/pages directory. Put your PDF there and rename it "source.pdf". Run the bash script provided. You'll need imagemagick and pdfseperate. Alternatively export your pages to those image locations (img1.pdf.jpg, etc) manually.
 
-If you want to remove the borders, simply comment or delete lines 15 and 16 in master.css. 
+Open the HTML (linked below) for your desired print format with your browser. Ctl+P to Print with no margins. For 4panel, you'll then need to merge the front and back pages using pdfunite or equivalent.
 
-I'm printing on letter paper. I suspect that if you had your zine pages proportioned to ISO standards, that it would just work with A4. If not you can tweak the css for it.
+# Support
+This is a rather hacky tool. Feel free to reach out if you are having trouble, no promises if I can actually help tho.
