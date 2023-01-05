@@ -1,38 +1,59 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>ZineMachine</title>
-    <link rel="stylesheet" href="css/master.css">
-  </head>
-  <body>
-    <div class="zine">
-      <div class="page-1">
-        <img src="img/img-0.png" alt="" class="aaa">
-      </div>
-      <div class="page-2">
-        <img src="img/img-1.png" alt="" class="aaa">
-      </div>
-      <div class="page-3">
-        <img src="img/img-2.png" alt="" class="aaa">
-      </div>
-      <div class="page-4">
-        <img src="img/img-3.png" alt="" class="aaa">
-      </div>
-      <div class="page-5">
-        <img src="img/img-4.png" alt="" class="aaa">
-      </div>
-      <div class="page-6">
-        <img src="img/img-5.png" alt="" class="aaa">
-      </div>
-      <div class="page-7">
-        <img src="img/img-6.png" alt="" class="aaa">
-      </div>
-      <div class="page-8">
-        <img src="img/img-7.png" alt="" class="aaa">
-      </div>
+<!-- TODO: Update the language if you're not writing in English! Hey, maybe remix this project and translate the instructions for other people? -->
+<html lang="en">
+<!-- TODO: Add a title for your zine -->
+<title>AV's Zine Machine</title>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- TODO: Update the icon image if you want to get fancy! -->
+<link rel="icon" type="image/png" href="https://cdn.glitch.com/c10b2617-5888-415b-b574-42e2ab8f3484%2Fzine-machine-32.png" />
+<link rel="stylesheet" href="style.css" />
 
+<!-- TODO: Add a description for your zine -->
+<meta name="Description" content="Welcome / Instruction Page" />
+<!-- TODO: Update the theme color to match if you change the styles -->
+<meta name="theme-color" content="#741b47" />
 
-    </div>
-  </body>
-</html>
+<main class="zine">
+  <header class="zine-page page-1">
+    <!-- TODO: Your front cover content goes here, so you probably want a good title and maybe some kind of image -->
+    <h1>Welcome to AV's Zine Machine</h1>
+    <p>This is a fork of <a href="https://zine-machine.glitch.me/"> https://zine-machine.glitch.me/ </a>. In addition to 8fold zines, it also makes 4panels, either from octiletter (1/8th of letter) pages or from demiletter (half of letter split skinny) pages. There are also some tools to help with processeing into a print ready document. Although this does use html as a markup language, it's indended usecase is as a local file on a linux system.</p>
+    <p>First format you zine in the document editor of your choice, and export as either a PDF or JPG sequence. For octiletter, it must be 8 pages, 2.75x4.25 inches. For demiletter, 2 pages, 4.5x11.  Remember to take into acount the print margins when making the zine, zine machine does not.</p>
+    <p>Go to the demiletter/pages or octiletter/pages directory. Put your PDF there and rename it "source.pdf". Run the bash script provided. You'll need imagemagick and pdfseperate. Alternitivly export your pages to those image locations (img1.pdf.jpg, etc) manually.</p>
+    <p>Open the HTML (linked below) for your desired print format with your browser. Ctl+P to Print with no margins. For 4panel, you'll then need to merge the front and back pages using pdfunite or equivalent</p>
+  </header>
+  <section class="zine-page page-2">
+    <h1>Demiletter</h1>
+    <p><a href="demiletter/4panelfront.html"> 4 panel front </a></p>
+    <p><a href="demiletter/4panelback.html"> 4 panel back </a></p>
+    <h1>Octiletter</h1>
+    <p><a href="octiletter/8foldtemplate.html"> 8 fold zine </a></p>
+    <p><a href="octiletter/4panelfront.html"> 4 panel front </a></p>
+    <p><a href="octiletter/4panelback.html"> 4 panel back </a></p>
+  </section>
+  <section class="zine-page page-3">
+    <h1>What is 4panel?</h1>
+    <p>4panel is a small zine format I'm fond of. I doubt I'm not the first to come up with it, but I'm the only one to make them like this, and so I named it. It has the same print area as an 8fold, but uses half the paper. It's also easier to assemble. </p>
+    <p>It is possible to make 4panels print with one page (with out the pdfunite step), however it makes it more difficult to fold. With the two page method like this, one can fold the sheet up, and cut it last; folding two zines at once.</p>
+    <p>You can read more about how I make 4panels in my <a href="placeholder"> zine </a></p>
+  </section>
+  <section class="zine-page page-4">
+    <!-- TODO: Page 4 - that's the halfway point, you're nearly there! -->
+  </section>
+  <section class="zine-page page-5">
+    <!-- TODO: You guessed it, page 5 content now -->
+  </section>
+  <section class="zine-page page-6">
+    <!-- TODO: Page 6, this is the last "page" but you can still keep going -->
+  </section>
+  <section class="zine-page page-7">
+    <!-- TODO: Page 7, this is the inside of the back cover -->
+  </section>
+  <footer class="zine-page page-8">
+    <!-- TODO: You made it! Page 8, the back cover. Feel free to use this for attributions. Hey, let me know if you want a review. I'll give you ★★★★★ and an amazing quote -->
+  </footer>
+</main>
+
+<!-- I know it says you need a closing </html> tag, but you actually don't! Feel free to add one though if it seems cleaner -->
