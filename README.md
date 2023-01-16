@@ -4,7 +4,7 @@ This is an HTML tool to page set small format zines, specifically 8fold and 4pan
 There are also some tools to help with processing into a print ready document. Although this does use html as a markup language, it's indented use-case is as a local file on a Linux system.
 
 # Usage
-First format you zine in the document editor of your choice, and export as either a PDF or JPG sequence. For octiletter, it must be 8 pages, 2.75x4.25 inches. For demiletter, 2 pages, 4.5x11.  Remember to take into account the print margins when making the zine, zine machine does not.
+First format you zine in the document editor of your choice, and export as either a PDF or JPG sequence. For octiletter, it must be 8 pages, 2.75x4.25 inches. For demiletter, 2 pages, 4.5x11.  Remember to take into account the print margins when making the zine, zine machine does not. The preprocessing directory contains some scripts that may be helpful for processing scans of physical media.
 
 Go to the demiletter/pages or octiletter/pages directory. Put your PDF there and rename it "source.pdf". Run the bash script provided. You'll need imagemagick and pdfseperate. Alternatively export your pages to those image locations (img1.pdf.jpg, etc) manually.
 
