@@ -1,0 +1,95 @@
+Jan 15, 2023:
+Today I am writing some new code to help preprocess scans of physical media for my zine *Joey's Home*. 
+
+I'm suffering from disorganized thinking and so am journaling to help mediate this. 
+
+Context: I have a pdf with scans of physical drawings fresh from the scanner. 
+
+Objective: 8 cropped jpgs that can be dumped into the existing zine machine code.
+
+Instructions: 
+1. Develop abstract for the process script. 
+2. Identify functions*.
+3. Open the ide.
+4. Write the functions*. 
+5. Write the rest of the code.
+6. Test the code!
+7. Bug fixing :>
+8. Comments.
+9. Git commit.
+10. Abrahadabra!
+
+*Like literal functions, not nescesserially code functions.
+
+7:45pm: I have written the huscript. Time to execute! I'm going to use python for my code because easy.a
+
+Abstract:
+
+0. Catch dimenstional info from flags.
+1. Remove old imgs.
+2. Split the pdf into jpgs.
+	2.1 Split the pdf.
+	2.2 For each file convert. if slow, consider parelel processing. 
+3. Crop each of the jpgs.
+	3.1 Crop function 
+4. Exit.
+
+Functions:
+1. Catching flags
+	1.1 helloworld
+	1.2 Catch the following: Xoffset, Xlen, Yoffeset, Ylen.
+	1.3 Save to var or put default.
+2. Run bash code
+	2.0 Hello world
+	2.1. File manipulation.
+	2.2. Split the pdf.
+	2.3. Convert pdf->jpg
+	2.3. Crop pdf.
+3. Theres some loops in there, im goig to be lazy and code it by feel.
+4. Exit.
+
+Hacky things im doing:
+- File manipulation with bash instead of doing it with os modual. 
+- Using bash to run imagemagick instead of using wand.
+
+8:00pm: The abstract is done. We ope the ide now.
+
+8:15pm: ChatGPT helped me do 1.1.
+
+8:35pm: 1.2 & 1.3 attained. Steach break and get back into it for function 2.
+
+8:45pm: 2.0 attained. 
+
+8:50pm: 2.1 and 2.2 atained. Im copying from the existing pdf2jpeg.sh
+
+9:00pm: 2.3 attained. room for optimization, good enough as is. now the tricky part. And actually I probobly should have done this first; im not sure that the cropping method in image magick will work like i guess it might.
+
+9:01pm: nvm it does work like how i guessed <3
+
+9:10pm: hello world with imagemagick cutting, however having trouble running it through python. also looking at the code from 2.3, seems like it takes about 2 minutes with my scan (8pg, 8.5x11, 600dpi). not a huge deal if i remember to turn it off when i dont actually want to run it :^)
+
+9:25pm: Needed a function to convert inch mesurments to px. Already done. noted for future huscript experiments.
+
+9:42pm: Had issues cropping right. Mis identified my own mistake (setting the inch2px function by input dpi (600) insdead of the conversion dpi (300)) as me misunderstanding how imagemagick centered cropping. Fixed now; funct 2.3 attained. 
+huscript issue: funct 3 doesnt make any sense, should omit, and let functions end, sending me back to instructions 5. 
+anyway, funct 3 ommited, funct 4 attained. instruction 4 completed.
+
+10:05pm: instruction 5 complete. Running dress rehersal as I type. Fingers crossed. Ouch, I still have an explicit reference to img1 instead of a loop.....
+
+10:06pm: fixed and running. the rm command still outputs an error?? look into in a moment. aggg butterfingered my code....
+
+10:15pm: pdf jpg conversion now gives cleaner file name for step 3 to work with: imgx-uncrop.jpg
+
+10:20pm: step 3 now takes the new name and spits out a new name using perl. It might be possible, though more confusing to combine steps 2.2 and 3. It would side step the naming nonscence. also changed step 1 to use shell. 
+
+10:25pm: change to step one avoids error message. program outputs no files?? disabling the removal in 2.2 and 3.
+
+10:30pm: imagemagick is upset about the geometry?? i'm trying specifying the input file more precisly "*-uncrop.jpg" insted of "img*"
+
+10:31pm: oh dear, step 3 is outputing to a blank filename because of bad pearl...
+
+10:38pm: using % operator instead of perl now, at reccomendation of chatgpt :)
+
+10:45pm: can i just right over my files?? memory position or something lol> i like python.	
+
+10:46pm: now with correct file name :) if i still dont have it i ought to disable the first half of the program to isolate the broken bit.
