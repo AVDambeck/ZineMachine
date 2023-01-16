@@ -12,6 +12,3 @@ Open the HTML (linked below) for your desired print format with your browser. Ct
 
 # Support
 This is a rather hacky tool. Feel free to reach out if you are having trouble, no promises if I can actually help tho.
-
-# Test
-ignor this, this is a test
