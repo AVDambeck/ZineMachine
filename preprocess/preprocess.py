@@ -18,7 +18,7 @@ Abstract:
 
 Notes:
 In step 1, if there are no imgs, it prints an error. doesnt inhibit function; not going to patch.
-Between step 2.2 and 3 theres a hacky thing where I convert to pdf>png>jpg instead of clerverer filename handling, or just doing it in one step. 
+Between step 2.2 and 3 theres a hacky thing where I convert to pdf>png>jpg instead of clerverer filename handling, or just doing it in one step.
 """
 
 # Step 00.
@@ -35,7 +35,6 @@ yoff = 0.5
 output_dpi = 300
 
 # Define inch_to_px function.
-# This function takes a inch mesurment and returns a pixle value.
 def inch_to_px(inch, dpi=output_dpi):
     return(inch*dpi)
 
