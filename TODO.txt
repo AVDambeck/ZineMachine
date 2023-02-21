@@ -1,3 +1,11 @@
+Febuary 21st - Beining some actions.
+prism.js and friends don't do anythung for zine machine; deleting.
+
+new to do:
+	-change pdfcrop to be seperate from jpg convert eg jgpsequencecrop
+
+
+
 Febuary 7th & 15th, 2023 - Planning out updates for the future. 
 
 Todo list:
@@ -25,19 +33,18 @@ Todo list:
 
 New directory structure.
 /
+	.dev/
+		crop_tool_journal.txt
+		todo.txt
 	files/
 		SOURCE.pdf, PRINT.pdf, pdf2jpg.sh, pdfcrop2jpg.sh, jpgpadd.sh, img1-9.jpg
 	html/
 		cache/
-
-		accordian_demi_front.html
-		accordian_demi_back.html
-		accordian_octi_front.html
-		accordian_octi_back.html
+		accordian_front.html
+		accordian_back.html
 		eightfold.html
 	LICENSE.md
 	README.md
-	JOURNAL.md
 	index.html
 	style.css
 

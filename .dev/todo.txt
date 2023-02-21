@@ -1,0 +1,140 @@
+Febuary 21st - Beining some actions.
+prism.js and friends don't do anythung for zine machine; deleting.
+
+new to do:
+	-change pdfcrop to be seperate from jpg convert eg jgpsequencecrop
+
+
+
+Febuary 7th & 15th, 2023 - Planning out updates for the future. 
+
+Todo list:
+- Reorganization
+	- Write new order
+	- what do prism.css, prism.js, and script.js do?
+	- archive exisitng project
+	- move files into new directory.
+- Name change
+	- file names to accordian
+	- html page titles to FRONT BACK PRINT etc
+- divider tool
+	1. Develop abstract.
+	2. Identify functions.
+	3. Open the ide.
+	4. Write each of the functions
+	5. Write the rest of the code.
+	6. Run the code!
+	7. Bug fixing :>
+	8. Documentation. 
+	9. Git commit.
+	10. Abrahadabra!
+- Rendering tool
+	- same as divider tool.
+
+New directory structure.
+/
+	.dev/
+		crop_tool_journal.txt
+		todo.txt
+	files/
+		SOURCE.pdf, PRINT.pdf, pdf2jpg.sh, pdfcrop2jpg.sh, jpgpadd.sh, img1-9.jpg
+	html/
+		cache/
+		accordian_front.html
+		accordian_back.html
+		eightfold.html
+	LICENSE.md
+	README.md
+	index.html
+	style.css
+
+Divider Abstract:
+
+0. this is a program which takes a input SOURCE.pdf and a crop_template.json. It outputs a jpg sequence of document pages cropped out of each of the SOURCE.pdf page, according to the specificiations in crop_template.json;
+1. import and define;
+2. import crop_template.json specified with cli flag;
+3. remove old flags;
+4. extract the first page of the pdf as an png;
+5. for each page specified in crop_template.json, crop and export as jpg;
+6. remove first page;
+7. repeate 4-6 with the rest of the pages;
+8. exit;
+
+crop template: holds a single list. each item in the list is an array of four numbers, defining in inches the x and y cords top left corner of the page, the page width and hight. 
+
+functions:
+1. import list from json.
+	1.0 hello world
+	1.1 implementation
+2. catch json location from flag.
+3. extract an arbitrary page of a pdf and a png.
+4. crop and export a png as a jpg.
+	4.0 steal from cropping tool
+	4.1 trouble shoot.
+5. file manipulation.
+6. for loop.
+8. keeping track of import and export page counts.
+
+Rendering Tool abstract:
+
+00. this is a series programs which takes zine pages in the jpg sequence in files/ and output a print ready document. Each program does a different format;
+0. this one is for 8fold;
+1. import and define;
+2. clear cache;
+3. identify if there are the right amount of jpgs. if there are too many, notifiy the user and continue. if there are not enough make blanks, notify, and continue;
+4. copy first 8 jpgs to cache;
+5. render pdf to PRINT.pdf;
+6. clear cache;
+7. exit;
+
+0. this one is for accordian;
+1. import and define;
+2. clear cache;
+3. identify if there are the right amount of jpgs. if there are too many, noifiy the user and continue. if there are not enough make blanks, notify, and continue;
+4. copy first 8 jpgs to cache;
+5. render front to cache;
+6. render back to cache;
+7. join pdfs. output to PRINT.pdf;
+
+0. this one is for quadro
+6. render first page front to cache;
+7. render first page back to cache;
+8. clear jpgs from cache;
+9. repeat 5-8 for each multipul of four.
+10. join pages, output to PRINT.pdf.
+11. done.;
+1. import and define;
+2. clear cache;
+3. identify how many pages there are. if there are less then eight, message and exit. if there is a multipul of eight, continue. otherwise notify and make blanks till it is and continue. note how many multipuls of eight;
+4. make list for signatures (4, 5, 1, 8, 3, 6, 2, 7?);
+5. copy first eight jpgs to cache;
+6. render first page front to cache;
+7. render first page back to cache;
+8. clear jpgs from cache;
+9. repeat 5-8 for each multipul of four.
+10. join pages, output to PRINT.pdf.
+11. done.
+
+0. this one is for booklet, and hypothetical (i need to work out signature logic for quadro)
+1. import and define;
+2. clear cache;
+3. idenfiy how many pages there are. if there are less than four, message and exit. if there is a multipul of four, continue. otherwise notify and make blanks until it is and continue. note how many multipuls of four;
+4. make list for signatures (4, 1, 2, 3?);
+5. copy first four jpgs to cache;
+6. render first page front to cache;
+7. render first page back to cache;
+8. clear jpgs from cache;
+9. repeat 5-8 for each multipul of four.
+10. join pages, output to PRINT.pdf.
+11. done.
+
+functions:
+1. file manipulation.
+	1.0 delete files.
+	1.1 copy files.
+2. Identifying how many jpgs there are. 
+3. generate blank white jpgs.
+4. render pdf with html.
+5. merging pdfs. 
+6. making signature lists.
+7. for loops. 
