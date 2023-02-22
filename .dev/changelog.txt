@@ -1,0 +1,3 @@
+Changes
+- New file structure. User can now stay in one directory while working. removed duplicate files. prerequsite for other changes.
+- cropping preprocess tool update. now acts on jpg sequence rather than on a pdf. also called cimply crop.py

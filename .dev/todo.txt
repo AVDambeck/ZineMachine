@@ -1,9 +1,13 @@
-Febuary 21st - Beining some actions.
+Febuary 22nd, 2023
+finished crop tool changes
+
+Febuary 21st, 2023 - Beining some actions.
 prism.js and friends don't do anythung for zine machine; deleting.
 
 new to do:
 	-change pdfcrop to be seperate from jpg convert eg jgpsequencecrop
-
+	-devider tool
+	-render tool
 
 
 Febuary 7th & 15th, 2023 - Planning out updates for the future. 

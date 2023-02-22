@@ -1,31 +1,20 @@
 #!python
 """
-This is a program which will take each page of a pdf, crop it, and output as a jpg. Intended for scans of physical art. Specify the dimenstions to be cropped with with x/ylen/off. Unit is inches.
-
 Abstract:
-00. Define and import.
-0. Catch dimenstional info from flags.
-    0.1 Catch var.
-    0.2 Save to var or keep default.
-    0.3 Compute px mesurment.
-1. Remove old imgs.
-2. Split the pdf into jpgs.
-        2.1 Split the pdf.
-        2.2 For each file convert.
-3. Crop each of the jpgs.
-4. Remove intermedate images.
+00. This is a program which will take each jpg in a directory, crop it, and replace the orignal. Intended for scans of physical art. Specify the dimenstions to be cropped with with x/ylen/off. Unit is inches.
+1. Define and import.
+2. Catch dimenstional info from flags.
+    2.1 Catch var.
+    2.2 Save to var or keep default.
+    2.3 Compute px mesurment.
+3. for each jpg, convert. 
 5. Exit.
-
-Notes:
-In step 1, if there are no imgs, it prints an error. doesnt inhibit function; not going to patch.
-Between step 2.2 and 3 theres a hacky thing where I convert to pdf>png>jpg instead of clerverer filename handling, or just doing it in one step.
 """
 
-# Step 00.
+# Step 1.
 import argparse
 import subprocess
 import logging
-
 
 # Define default values.
 xlen = 5.5
@@ -38,7 +27,7 @@ output_dpi = 300
 def inch_to_px(inch, dpi=output_dpi):
     return(inch*dpi)
 
-# Step 0.
+# Step 2.
 # Catch user input from flags.
 parser = argparse.ArgumentParser()
 parser.add_argument("-v", "--verbose",  action='store_true', help="Increase verbosity.")
@@ -85,30 +74,11 @@ ylen_px = inch_to_px(ylen)
 yoff_px = inch_to_px(yoff)
 logging.info(f'calculated px mesurments to xlen={xlen_px}, xoff={xoff_px}, ylen={ylen_px}, yoff={yoff_px}.')
 
-# Step 1.
-logging.info('removing old imgs. prints error to consol if no imgs.')
-subprocess.run("rm img*", shell=True)
-
-# Step 2.
-# Split pdf.
-logging.info('seperating pdf, this may take a moment.')
-subprocess.run(["pdfseparate", "source.pdf", "img%d.pdf"])
-
-# Converting to jpg.
-# This part could be optimized with paralel processing. Puyt the loop in python and use asyncio or something. Its not so long that I actually bother (about 2 minutes on my i7). If you wanted to process at 600 dpi, or a longer document, it could be worth while.
-logging.info('converting from pdf, this may take a moment.')
-subprocess.run(f"for i in img*; do convert -density {output_dpi} -background white -alpha remove $i $(perl -e 'print $ARGV[0] =~ s/\.[^.]+$//r' $i).png; done;", shell=True)
-
 # Step 3.
-# This part could also be optimized with paralel processing, as above.
+# This part could also be optimized with paralel processing. Not needed at current scale.
 logging.info('Begin cropping.')
-subprocess.run(f"for i in *.png; do magick $i -crop {xlen_px}x{ylen_px}+{xoff_px}+{yoff_px} $(perl -e 'print $ARGV[0] =~ s/\.[^.]+$//r' $i).jpg; done;", shell=True)
+subprocess.run(f"for i in *.jpg; do magick $i -crop {xlen_px}x{ylen_px}+{xoff_px}+{yoff_px} $i; done;", shell=True)
 
 # Step 4
-logging.info('removing uncrops and pdf')
-subprocess.run('find . -type f -name "*.pdf" ! -name "source.pdf" -delete', shell=True)
-subprocess.run('rm *png', shell=True)
-
-# Step 5
 logging.info('end of program.')
 exit()
