@@ -1,0 +1,9 @@
+{
+"template_name":"letter with two pages",
+"scan_size":[11, 8.5],
+"pages":
+	[
+	    [5.5,8.5,0,0],
+	    [5.5,8.5,5.5,0]
+	]
+}
