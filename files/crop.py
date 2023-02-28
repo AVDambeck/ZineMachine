@@ -31,10 +31,10 @@ def inch_to_px(inch, dpi=output_dpi):
 # Catch user input from flags.
 parser = argparse.ArgumentParser()
 parser.add_argument("-v", "--verbose",  action='store_true', help="Increase verbosity.")
-parser.add_argument("-x", "--xlen", help="Horizontal width of the image.")
-parser.add_argument("-X", "--xoff", help="Horizontal width of croparea to the left of the image.")
-parser.add_argument("-y", "--ylen", help="Vertical hieght of the image.")
-parser.add_argument("-Y", "--yoff", help="Vertical hieght of croparea to the top of the image.")
+parser.add_argument("-x", "--xlen", type=float, help="Horizontal width of the image.")
+parser.add_argument("-X", "--xoff", type=float, help="Horizontal width of croparea to the left of the image.")
+parser.add_argument("-y", "--ylen", type=float, help="Vertical hieght of the image.")
+parser.add_argument("-Y", "--yoff", type=float, help="Vertical hieght of croparea to the top of the image.")
 args = parser.parse_args()
 
 if args.verbose == True:
@@ -43,25 +43,25 @@ else:
     logging.basicConfig(level=logging.WARNING, format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
 
 # Store input to var.
-if args.xlen:
+if args.xlen != xlen:
     xlen = args.xlen
     logging.info(f'xlen set from flag, = {args.xlen}.')
 else:
     logging.info(f'xlen set from default, = {xlen}.')
 
-if args.xoff:
+if args.xoff != xoff:
     xoff = args.xoff
     logging.info(f'xoff set from flag, = {args.xoff}.')
 else:
     logging.info(f'xoff set from default, = {xoff}.')
 
-if args.ylen:
+if args.ylen != ylen:
     ylen = args.ylen
     logging.info(f'ylen set from flag, = {args.ylen}.')
 else:
     logging.info(f'ylen set from default, = {ylen}')
 
-if args.yoff:
+if args.yoff != yoff:
     yoff = args.yoff
     logging.info(f'yoff set from flag, = {args.yoff}.')
 else:
@@ -72,6 +72,7 @@ xlen_px = inch_to_px(xlen)
 xoff_px = inch_to_px(xoff)
 ylen_px = inch_to_px(ylen)
 yoff_px = inch_to_px(yoff)
+print(xlen_px)
 logging.info(f'calculated px mesurments to xlen={xlen_px}, xoff={xoff_px}, ylen={ylen_px}, yoff={yoff_px}.')
 
 # Step 3.
