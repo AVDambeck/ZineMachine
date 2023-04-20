@@ -1,0 +1,12 @@
+{
+    "template_name":"letter with two pages",
+    "message":"octi_on_demi.json is untested. Use with caution.",
+    "scan_size":[11, 2.25],
+    "pages":
+	[
+	    [2.75, 2.25, 0, 0],
+	    [2.75, 2.25, 2.75, 0],
+	    [2.75, 2.25, 5.5, 0],
+	    [2.75, 2.25, 8.25, 0]
+	]
+}

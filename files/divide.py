@@ -12,19 +12,6 @@ Abstract:
 6. remove first page from cache;
 7. repeat 4-6 with rest of the pages;
 8. exit;
-
-Functions:
-1. Import json.
-	1.0 hello world
-	1.1 implementation.
-2. catch json location from flag.
-3. extract an arbitary page of a pdf as a png.
-4. crop png as a jpg.
-	4.0 steal from cropping tool.
-	4.1 touble shoot.
-5. Deleting files in cach and files/
-6. for loop.
-7. keeping track of page count.
 """
 
 #1 import and define.
@@ -62,7 +49,8 @@ if args.template == None:
 else:
     f = open(args.template)
     template = json.load(f)
-
+    if template["message"] != "":
+        logging.warning(f'template message: {template["message"]}')
 #3 clear imgs and cache
 jpg_files = glob.glob("*.jpg")
 for file in jpg_files:
@@ -86,9 +74,16 @@ for page_num in range(0,number_of_pages):
         ylen_px = inch_to_px(leaf[1])
         xoff_px = inch_to_px(leaf[2])
         yoff_px = inch_to_px(leaf[3])
+        try:
+            rotate = leaf[4]
+        except:
+            pass
         leaf_name = f"img{leaf_count:02}.jpg"
         logging.info(leaf_name)
-        subprocess.run(f"magick -density {output_dpi} ../cache/page.pdf -crop {xlen_px}x{ylen_px}+{xoff_px}+{yoff_px} {leaf_name};", shell=True)
+        try:
+            subprocess.run(f"magick -density {output_dpi} ../cache/page.pdf -crop {xlen_px}x{ylen_px}+{xoff_px}+{yoff_px} -rotate {rotate} {leaf_name};", shell=True)
+        except:
+            subprocess.run(f"magick -density {output_dpi} ../cache/page.pdf -crop {xlen_px}x{ylen_px}+{xoff_px}+{yoff_px} {leaf_name};", shell=True)
         leaf_count += 1
 
     #6

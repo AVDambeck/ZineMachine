@@ -1,0 +1,51 @@
+* Todo list
+** DONE rotate function in devider
+- [X] Add rotate flag to templates.
+- [X] Google how to rotate an image with python.
+- [X] Add the function: If flag, rotate.
+** DONE Lazy8s devide template.
+Called generic.
+** TODO Make print files for the new zines. [5/7]
+- [X] 5 Minute Bug Zine
+- [X] Mental Breakdown
+- [X] How to Make Art.
+- [X] How to Make Art type.
+- [ ] A Comic i Drew while high as balls.
+- [X] Kitkat's zine making
+- [ ] Ink Monsters. 
+** TODO streamline accordian render: reuse one template using cached files.
+** TODO un8folder devide template.
+** TODO Rendering tool for quadro, demiletter,
+*** Quadro
+0. this one is for quadro
+6. render first page front to cache;
+7. render first page back to cache;
+8. clear jpgs from cache;
+9. repeat 5-8 for each multipul of four.
+10. join pages, output to PRINT.pdf.
+11. done.;
+*** UHH
+1. import and define;
+2. clear cache;
+3. identify how many pages there are. if there are less then eight, message and exit. if there is a multipul of eight, continue. otherwise notify and make blanks till it is and continue. note how many multipuls of eight;
+4. make list for signatures (4, 5, 1, 8, 3, 6, 2, 7?);
+5. copy first eight jpgs to cache;
+6. render first page front to cache;
+7. render first page back to cache;
+8. clear jpgs from cache;
+9. repeat 5-8 for each multipul of four.
+10. join pages, output to PRINT.pdf.
+11. done.
+*** Booklet
+0. this one is for booklet, and hypothetical (i need to work out signature logic for quadro)
+1. import and define;
+2. clear cache;
+3. idenfiy how many pages there are. if there are less than four, message and exit. if there is a multipul of four, continue. otherwise notify and make blanks until it is and continue. note how many multipuls of four;
+4. make list for signatures (4, 1, 2, 3?);
+5. copy first four jpgs to cache;
+6. render first page front to cache;
+7. render first page back to cache;
+8. clear jpgs from cache;
+9. repeat 5-8 for each multipul of four.
+10. join pages, output to PRINT.pdf.
+11. done.

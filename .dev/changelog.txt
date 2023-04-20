@@ -1,3 +1,7 @@
 Changes
+- Automatic rending tool for 8fold and accordian. Pageset zines entierly from the command line!
+- New diveder tool. Crops document pages out of pdfs that have multiple. 
 - New file structure. User can now stay in one directory while working. removed duplicate files. prerequsite for other changes.
 - cropping preprocess tool update. now acts on jpg sequence rather than on a pdf. also called cimply crop.py
+- New clear.sh removes imgs from working directory. 
+- new dependencies: pypdf, pyhtml2pdf.

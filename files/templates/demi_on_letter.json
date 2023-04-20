@@ -1,0 +1,9 @@
+{
+    "template_name":"one demi on a letter page.",
+    "message":"",
+    "scan_size":[11, 8.5],
+    "pages":
+	[
+	    [11, 4.25, 0, 0]
+	]
+}

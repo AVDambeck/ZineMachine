@@ -1,0 +1,38 @@
+Todo list:
+- streamline accordian render: reuse one template using cached files.
+- un8folder devide template.
+- rotater tool in devider
+- Rendering tool for quadro, demiletter, 
+
+
+0. this one is for quadro
+6. render first page front to cache;
+7. render first page back to cache;
+8. clear jpgs from cache;
+9. repeat 5-8 for each multipul of four.
+10. join pages, output to PRINT.pdf.
+11. done.;
+1. import and define;
+2. clear cache;
+3. identify how many pages there are. if there are less then eight, message and exit. if there is a multipul of eight, continue. otherwise notify and make blanks till it is and continue. note how many multipuls of eight;
+4. make list for signatures (4, 5, 1, 8, 3, 6, 2, 7?);
+5. copy first eight jpgs to cache;
+6. render first page front to cache;
+7. render first page back to cache;
+8. clear jpgs from cache;
+9. repeat 5-8 for each multipul of four.
+10. join pages, output to PRINT.pdf.
+11. done.
+
+0. this one is for booklet, and hypothetical (i need to work out signature logic for quadro)
+1. import and define;
+2. clear cache;
+3. idenfiy how many pages there are. if there are less than four, message and exit. if there is a multipul of four, continue. otherwise notify and make blanks until it is and continue. note how many multipuls of four;
+4. make list for signatures (4, 1, 2, 3?);
+5. copy first four jpgs to cache;
+6. render first page front to cache;
+7. render first page back to cache;
+8. clear jpgs from cache;
+9. repeat 5-8 for each multipul of four.
+10. join pages, output to PRINT.pdf.
+11. done.
