@@ -1,1 +1,0 @@
-/home/kitkat/Programs/ZineMachine/scripts/pdf2jpeg.sh
