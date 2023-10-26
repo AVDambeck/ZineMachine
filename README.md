@@ -1,3 +1,6 @@
+# Depreciate!
+Development continues at [zinemachine2.0](https://github.com/AVDambeck/zinemachine2.0)
+
 # Make 8 Fold Zines Easy!
 This is an HTML tool to page set small format zines, specifically 8fold and accordian. 
 
